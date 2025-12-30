@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rajesh Nasit",
+  title: "Rajesh-Nasit-Resume",
   description: "Portfolio of Rajesh Nasit - React Native & Full Stack Developer",
   icons: {
     icon: "/profile.jpeg",

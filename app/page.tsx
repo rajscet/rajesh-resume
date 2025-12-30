@@ -7,7 +7,7 @@ import { TabBarTemplate } from "@/components/templates/TabBarTemplate";
 import { TemplateSwitcher } from "@/components/TemplateSwitcher";
 
 export default function Home() {
-  const [template, setTemplate] = useState("tabbar");
+  const [template, setTemplate] = useState("classic");
 
   return (
     <main>

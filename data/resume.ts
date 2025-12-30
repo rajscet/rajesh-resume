@@ -42,9 +42,9 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   personalInfo: {
     name: "Rajesh Nasit",
-    title: "React Native & Full Stack Developer",
-    summary:
-      "React Native Developer with 7 Years of Expertise | 8 months Hands on experience with ReactJS and Node JS | Android Native (JAVA) Specialist.",
+    title:
+      "React Native Expert | Freelancer & Consultant | ReactJS / Next JS / Node JS Developer | 15+ Years of experience in Software Industry",
+    summary: "",
     email: "enrajesh67@gmail.com",
     phone: "+91 - 9510475846",
     location: "Surat (Permanent) / Gadhda (Current), Gujarat, India",
