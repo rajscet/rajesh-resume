@@ -1,11 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { resumeData } from "@/data/resume";
 import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, CircleUser, Code2 } from "lucide-react";
 import { ExportPdfButton } from "@/components/ExportPdfButton";
+import { LocationLink } from "@/components/LocationLink";
+import { EmailOptionsModal } from "@/components/EmailOptionsModal";
 
 export function ClassicTemplate() {
   const { personalInfo, experience, education, skills, projects } = resumeData;
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 p-4 sm:p-8 animate-in fade-in duration-500">
@@ -27,16 +31,30 @@ export function ClassicTemplate() {
             <h3 className="text-lg font-semibold border-b border-slate-700 pb-2">Contact</h3>
             <div className="space-y-3 text-sm text-slate-300">
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4" />
-                <a href={`mailto:${personalInfo.email}`} className="hover:text-white transition-colors">{personalInfo.email}</a>
+                <button 
+                  onClick={() => setIsEmailModalOpen(true)}
+                  className="flex items-center gap-3 underline hover:text-white transition-colors text-left"
+                >
+                  <Mail className="w-4 h-4" />
+                  {personalInfo.email}
+                </button>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4" />
-                <span>{personalInfo.phone}</span>
+                <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-3 underline hover:text-white transition-colors">
+                  <Phone className="w-4 h-4" />
+                  {personalInfo.phone}
+                </a>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4" />
-                <span>{personalInfo.location}</span>
+                <a 
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalInfo.location)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  <MapPin className="w-4 h-4" />
+                </a>
+                <LocationLink location={personalInfo.location} className="hover:text-white transition-colors" />
               </div>
               
               <div className="flex flex-wrap gap-3 mt-4 pt-4">
@@ -142,6 +160,11 @@ export function ClassicTemplate() {
         </main>
       </div>
       <ExportPdfButton />
+      <EmailOptionsModal 
+        isOpen={isEmailModalOpen} 
+        onClose={() => setIsEmailModalOpen(false)} 
+        email={personalInfo.email} 
+      />
     </div>
   );
 }

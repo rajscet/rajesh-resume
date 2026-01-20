@@ -6,11 +6,14 @@ import { cn } from "@/lib/utils";
 import { resumeData } from "@/data/resume";
 import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, CircleUser, Menu, X } from "lucide-react";
 import { ExportPdfButton } from "@/components/ExportPdfButton";
+import { LocationLink } from "@/components/LocationLink";
+import { EmailOptionsModal } from "@/components/EmailOptionsModal";
 
 export function TabBarTemplate() {
   const { personalInfo, experience, education, skills, projects } = resumeData;
   const [activeTab, setActiveTab] = useState("profile");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   const tabs = [
     { id: "profile", label: "Profile" },
@@ -142,14 +145,25 @@ export function TabBarTemplate() {
            
            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" /> {personalInfo.location}
+                <a 
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalInfo.location)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  <MapPin className="w-4 h-4" /> 
+                </a>
+                <LocationLink location={personalInfo.location} />
               </div>
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
+              <button 
+                onClick={() => setIsEmailModalOpen(true)} 
+                className="flex items-center gap-2 underline hover:text-primary transition-colors text-left"
+              >
                 <Mail className="w-4 h-4" /> {personalInfo.email}
-              </a>
-              <div className="flex items-center gap-2">
+              </button>
+              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 underline hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" /> {personalInfo.phone}
-              </div>
+              </a>
            </div>
 
            <div className="flex gap-4">
@@ -293,6 +307,11 @@ export function TabBarTemplate() {
         <p>© {new Date().getFullYear()} {process.env.NEXT_PUBLIC_NAME || "Portfolio"}. All rights reserved.</p>
       </footer>
       <ExportPdfButton />
+      <EmailOptionsModal 
+        isOpen={isEmailModalOpen} 
+        onClose={() => setIsEmailModalOpen(false)} 
+        email={personalInfo.email} 
+      />
     </div>
   );
 }
