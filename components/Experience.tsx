@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
-import { Calendar, Building2, ExternalLink } from "lucide-react";
+import { Calendar, Building2 } from "lucide-react";
 
 export function Experience() {
   return (
@@ -37,20 +37,20 @@ export function Experience() {
                   <h3 className="text-xl font-semibold leading-none">{job.role}</h3>
                   <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
                     <Building2 className="w-4 h-4" />
-                    <span>{job.company}</span>
-                    {job.link && (
-                      <>
-                        <span>•</span>
-                        <a 
-                          href={job.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 hover:text-primary transition-colors"
-                        >
-                          Visit <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </>
+                    {job.link ? (
+                      <a 
+                        href={job.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors underline"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      <span>{job.company}</span>
                     )}
+
+
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-500 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full w-fit">
@@ -73,7 +73,7 @@ export function Experience() {
                             href={match[2]}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium text-blue-600 dark:text-blue-400"
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
                           >
                             {match[1]}
                           </a>

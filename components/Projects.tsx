@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
-import { ExternalLink, Github, FolderGit2 } from "lucide-react";
+import { FolderGit2 } from "lucide-react";
 
 export function Projects() {
   if (!resumeData.projects || resumeData.projects.length === 0) return null;
@@ -35,21 +35,24 @@ export function Projects() {
                 <div className="p-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors">
                   <FolderGit2 className="w-6 h-6" />
                 </div>
-                {project.link && (
-                  <a
+              </div>
+
+              {project.link ? (
+                 <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-primary transition-colors"
+                    className="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   >
-                    <ExternalLink className="w-5 h-5" />
+                    <h3 className="text-xl font-bold mb-2 underline">
+                      {project.title}
+                    </h3>
                   </a>
-                )}
-              </div>
-
-              <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
+              ) : (
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+              )}
               <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
                 {project.description}
               </p>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { resumeData } from "@/data/resume";
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, CircleUser, Code2 } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, CircleUser, Code2 } from "lucide-react";
 import { ExportPdfButton } from "@/components/ExportPdfButton";
 import { LocationLink } from "@/components/LocationLink";
 import { EmailOptionsModal } from "@/components/EmailOptionsModal";
@@ -33,14 +33,14 @@ export function ClassicTemplate() {
               <div className="flex items-center gap-3">
                 <button 
                   onClick={() => setIsEmailModalOpen(true)}
-                  className="flex items-center gap-3 underline hover:text-white transition-colors text-left"
+                  className="flex items-center gap-3 underline text-blue-400 hover:text-blue-300 transition-colors text-left"
                 >
                   <Mail className="w-4 h-4" />
                   {personalInfo.email}
                 </button>
               </div>
               <div className="flex items-center gap-3">
-                <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-3 underline hover:text-white transition-colors">
+                <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-3 underline text-blue-400 hover:text-blue-300 transition-colors">
                   <Phone className="w-4 h-4" />
                   {personalInfo.phone}
                 </a>
@@ -118,14 +118,33 @@ export function ClassicTemplate() {
                     <span className="text-sm font-medium text-slate-500">{job.startDate} - {job.endDate}</span>
                   </div>
                   <div className="text-lg font-semibold text-primary mb-2 flex items-center gap-2">
-                    {job.company}
-                    {job.link && (
-                        <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary"><ExternalLink className="w-3 h-3"/></a>
+                    {job.link ? (
+                        <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">{job.company}</a>
+                    ) : (
+                        job.company
                     )}
                   </div>
                   <ul className="list-disc list-outside ml-4 space-y-1 text-slate-600 dark:text-slate-400">
                     {job.description.map((desc, j) => (
-                      <li key={j}>{desc}</li>
+                      <li key={j}>
+                        {desc.split(/(\[.*?\]\(.*?\))/g).map((part, k) => {
+                          const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                          if (match) {
+                            return (
+                              <a
+                                key={k}
+                                href={match[2]}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
+                              >
+                                {match[1]}
+                              </a>
+                            );
+                          }
+                          return part;
+                        })}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -140,10 +159,11 @@ export function ClassicTemplate() {
                 {projects.map((project, i) => (
                   <div key={i}>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-bold">{project.title}</h3>
-                      {project.link && (
-                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary"><ExternalLink className="w-4 h-4"/></a>
-                      )}
+                      {project.link ? (
+                          <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">{project.title}</a>
+                       ) : (
+                          project.title
+                       )}
                     </div>
                     <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">{project.description}</p>
                     <div className="flex flex-wrap gap-1">

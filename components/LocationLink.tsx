@@ -28,7 +28,7 @@ export const LocationLink: React.FC<LocationLinkProps> = ({
                   href="https://www.google.com/maps/search/?api=1&query=Surat"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-primary transition-colors"
+                  className="underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {part}
@@ -45,7 +45,7 @@ export const LocationLink: React.FC<LocationLinkProps> = ({
                   href="https://www.google.com/maps/search/?api=1&query=Gadhda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-primary transition-colors"
+                  className="underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {part}
@@ -74,7 +74,7 @@ export const LocationLink: React.FC<LocationLinkProps> = ({
       )}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${className} underline hover:text-primary transition-colors`}
+      className={`${className} underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors`}
       onClick={(e) => e.stopPropagation()}
     >
       {location}

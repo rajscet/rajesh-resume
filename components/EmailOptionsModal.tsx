@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Copy, X, ExternalLink } from "lucide-react";
+import { Mail, Copy, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface EmailOptionsModalProps {
@@ -114,7 +114,7 @@ export const EmailOptionsModal: React.FC<EmailOptionsModalProps> = ({
                     {option.name}
                   </span>
                   {option.name !== "Copy Email Address" && option.name !== "Default Email App" && (
-                     <ExternalLink className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-50" />
+                     null
                   )}
                 </button>
               ))}

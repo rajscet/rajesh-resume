@@ -81,6 +81,7 @@ export const resumeData: ResumeData = {
         "Send PR for each ticket for review after completing each task.",
         "Attending Sprint and PI planning meeting for future goals.",
         "Attending one to one or group call for local queries and solve conflicts.",
+        "Key projects delivered: [Vidyaranyam](https://play.google.com/store/apps/details?id=com.tessrac.vidyaranyam.app), [Sreshta Farm](https://play.google.com/store/apps/details?id=com.tessrac.sreshtafarm), [Craftsly](https://play.google.com/store/apps/details?id=com.tessrac.craftsly).",
       ],
       technologies: ["React Native", "React.js"],
       link: "https://tessrac.com/",
@@ -198,12 +199,19 @@ export const resumeData: ResumeData = {
       link: "https://www.farmadvantage.com",
     },
     {
+      title: "SRK. One",
+      description:
+        "For Diamond purchase and Inquiry. Need a quick and easy way to buy your diamonds at ease? The srk. One application is one of the best and most reliable to help you purchase diamonds on the go. Trusted by businesses everywhere, srk. one displays our inventory of over 3000+ stones of 3.00 to 4.99 carat and 1000+ stones of 5.00+ carat. The srk. one for Android/iOS has a user-friendly interface that allows a quick comparison of multiple diamonds whenever you need it.",
+      role: "Worked with a big team and managed Jr mobile developers and I communicated with the backend team, client, QA, and Designer via skype scrum to show progress, requirement gathering and queries' resolution.",
+      technologies: ["React Native", "Node JS", "MongoDB"],
+      link: "https://play.google.com/store/apps/details?id=com.srk",
+    },
+    {
       title: "Fryends",
       description:
         "Automated Referral Network. Auto Referrals: Fryends constantly scour your network looking for jobs that match your skills. Leads: The system then notifies you of all potential jobs and clients that match you. Introduction: Your mutual friend will proceed to make the proper introductions in a new three-way chat room.",
       role: "We are 2 react native developers working together and communicating with the backend team, client, and QA via scrum to show progress and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
-      link: "https://fryends.com/",
     },
     {
       title: "Fun Comp",
@@ -218,7 +226,6 @@ export const resumeData: ResumeData = {
         "Network for Actor, Director and Advertiser. Actor can put their portfolio and discuss with director if director is interested on it to play role of his movie, etc and can see requirement of director. Director can see portfolio of all actors and can contact if he is interested of actor. Advertise will prompt his ads on this app.",
       role: "We are two react native developers working together and communicating with the backend team, client, and QA via scrum google meet and slack to show progress, gathering requirements and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
-      link: "https://geeksinvention.com/",
     },
     {
       title: "Payment App",
@@ -233,15 +240,6 @@ export const resumeData: ResumeData = {
         "Home design/decorating ideas. NestByte is for professionals of home decor and designer like https://www.houzz.in/. Professionals will put their portfolios and from those portfolios, end users will inquire for orders and quote.",
       role: "MySelf only single react native developer in this project and I communicated with the backend team, client, and QA, Designer via scrum zoom meet and skype to show progress and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
-      link: "https://www.srkay.com/",
-    },
-    {
-      title: "SRK. One",
-      description:
-        "For Diamond purchase and Inquiry. Need a quick and easy way to buy your diamonds at ease? The srk. One application is one of the best and most reliable to help you purchase diamonds on the go. Trusted by businesses everywhere, srk. one displays our inventory of over 3000+ stones of 3.00 to 4.99 carat and 1000+ stones of 5.00+ carat. The srk. one for Android/iOS has a user-friendly interface that allows a quick comparison of multiple diamonds whenever you need it.",
-      role: "Worked with a big team and managed Jr mobile developers and I communicated with the backend team, client, QA, and Designer via skype scrum to show progress, requirement gathering and queries' resolution.",
-      technologies: ["React Native", "Node JS", "MongoDB"],
-      link: "https://play.google.com/store/apps/details?id=com.srk",
     },
   ],
 };

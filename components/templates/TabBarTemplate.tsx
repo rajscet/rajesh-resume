@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { resumeData } from "@/data/resume";
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, CircleUser, Menu, X } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, CircleUser, Menu, X } from "lucide-react";
 import { ExportPdfButton } from "@/components/ExportPdfButton";
 import { LocationLink } from "@/components/LocationLink";
 import { EmailOptionsModal } from "@/components/EmailOptionsModal";
@@ -157,11 +157,11 @@ export function TabBarTemplate() {
               </div>
               <button 
                 onClick={() => setIsEmailModalOpen(true)} 
-                className="flex items-center gap-2 underline hover:text-primary transition-colors text-left"
+                className="flex items-center gap-2 underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors text-left"
               >
                 <Mail className="w-4 h-4" /> {personalInfo.email}
               </button>
-              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 underline hover:text-primary transition-colors">
+              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                 <Phone className="w-4 h-4" /> {personalInfo.phone}
               </a>
            </div>
@@ -200,14 +200,33 @@ export function TabBarTemplate() {
                     <span className="text-sm font-medium px-3 py-1 bg-gray-100 dark:bg-zinc-800 rounded-full">{job.startDate} - {job.endDate}</span>
                  </div>
                  <div className="text-lg font-medium text-gray-500 mb-4 flex items-center gap-2">
-                    {job.company}
-                    {job.link && (
-                        <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary"><ExternalLink className="w-4 h-4"/></a>
+                    {job.link ? (
+                        <a href={job.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">{job.company}</a>
+                    ) : (
+                        job.company
                     )}
                  </div>
                  <ul className="list-disc list-outside ml-4 space-y-2 text-gray-600 dark:text-gray-300 mb-4">
                     {job.description.map((desc, j) => (
-                      <li key={j}>{desc}</li>
+                      <li key={j}>
+                        {desc.split(/(\[.*?\]\(.*?\))/g).map((part, k) => {
+                          const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                          if (match) {
+                            return (
+                              <a
+                                key={k}
+                                href={match[2]}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
+                              >
+                                {match[1]}
+                              </a>
+                            );
+                          }
+                          return part;
+                        })}
+                      </li>
                     ))}
                  </ul>
                  <div className="flex flex-wrap gap-2">
@@ -232,10 +251,11 @@ export function TabBarTemplate() {
              {projects.map((project, i) => (
                <div key={i} className="bg-gray-50 dark:bg-zinc-900 rounded-2xl p-6 hover:shadow-lg transition-shadow border border-gray-100 dark:border-zinc-800">
                   <div className="flex justify-between items-start mb-4">
-                     <h3 className="text-xl font-bold">{project.title}</h3>
-                     {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary"><ExternalLink className="w-5 h-5"/></a>
-                     )}
+                      {project.link ? (
+                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">{project.title}</a>
+                      ) : (
+                         project.title
+                      )}
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
                     {project.description}
