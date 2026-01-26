@@ -54,7 +54,23 @@ export function Projects() {
                 </h3>
               )}
               <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
-                {project.description}
+                {project.description.split(/(\[.*?\]\(.*?\))/g).map((part, j) => {
+                  const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                  if (match) {
+                    return (
+                      <a
+                        key={j}
+                        href={match[2]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
+                      >
+                        {match[1]}
+                      </a>
+                    );
+                  }
+                  return part;
+                })}
               </p>
 
               <div className="flex flex-wrap gap-2 mt-auto">

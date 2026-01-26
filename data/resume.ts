@@ -193,7 +193,7 @@ export const resumeData: ResumeData = {
     {
       title: "Stonex LLC (Farm Advantage & StoneX One Pro)",
       description:
-        "Farm Advantage arms row crops farmers, dairy farms, and livestock operations with tools to market produce, manage risk and maximize margins. StoneX One Pro gives professional trades access to algorithmic trading, white glove support, and advanced account types.",
+        "Farm Advantage arms row crops farmers, dairy farms, and livestock operations with tools to market produce, manage risk and maximize margins. StoneX One Pro gives professional trades access to algorithmic trading, white glove support, and advanced account types. Apps: [StoneX One](https://play.google.com/store/apps/details?id=com.stonex.one), [Farm Advantage](https://play.google.com/store/apps/details?id=intlfcstone.clientaccess).",
       role: "Working as Frontend developer.",
       technologies: ["React Native", "C# Dot Net", "Signal R"],
       link: "https://www.farmadvantage.com",

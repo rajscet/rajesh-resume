@@ -165,7 +165,25 @@ export function ClassicTemplate() {
                           project.title
                        )}
                     </div>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">{project.description}</p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+                      {project.description.split(/(\[.*?\]\(.*?\))/g).map((part, j) => {
+                        const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                        if (match) {
+                          return (
+                            <a
+                              key={j}
+                              href={match[2]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
+                            >
+                              {match[1]}
+                            </a>
+                          );
+                        }
+                        return part;
+                      })}
+                    </p>
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.map((t, k) => (
                          <span key={k} className="text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-900 px-1.5 py-0.5 rounded">#{t}</span>

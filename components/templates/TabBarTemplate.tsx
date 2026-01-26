@@ -258,7 +258,23 @@ export function TabBarTemplate() {
                       )}
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
-                    {project.description}
+                    {project.description.split(/(\[.*?\]\(.*?\))/g).map((part, j) => {
+                      const match = part.match(/\[(.*?)\]\((.*?)\)/);
+                      if (match) {
+                        return (
+                          <a
+                            key={j}
+                            href={match[2]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium"
+                          >
+                            {match[1]}
+                          </a>
+                        );
+                      }
+                      return part;
+                    })}
                   </p>
                   {project.role && (
                      <p className="text-xs text-gray-500 mb-4 italic border-l-2 border-gray-200 pl-2">
