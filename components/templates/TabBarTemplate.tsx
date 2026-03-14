@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { resumeData } from "@/data/resume";
-import { Mail, Phone, MapPin, Github, Linkedin, CircleUser, Menu, X } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, CircleUser, Menu, X, GraduationCap, Calendar } from "lucide-react";
 import { ExportPdfButton } from "@/components/ExportPdfButton";
 import { LocationLink } from "@/components/LocationLink";
 import { EmailOptionsModal } from "@/components/EmailOptionsModal";
+import { CertificateList } from "@/components/CertificateList";
 
 export function TabBarTemplate() {
   const { personalInfo, experience, education, skills, projects } = resumeData;
@@ -15,12 +16,18 @@ export function TabBarTemplate() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
+  const allCertificates = [
+    ...experience.flatMap((job) => job.certificates || []),
+    ...education.flatMap((edu) => edu.certificates || []),
+  ];
+
   const tabs = [
     { id: "profile", label: "Profile" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "education", label: "Education" },
+    { id: "certificates", label: "Certificates" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -236,6 +243,9 @@ export function TabBarTemplate() {
                        </span>
                     ))}
                  </div>
+                 <div className="mt-4">
+                    <CertificateList certificates={job.certificates} />
+                 </div>
               </div>
             ))}
           </div>
@@ -288,7 +298,9 @@ export function TabBarTemplate() {
                        </span>
                     ))}
                   </div>
-               </div>
+                  
+
+                </div>
              ))}
           </div>
         </section>
@@ -311,6 +323,7 @@ export function TabBarTemplate() {
                        </div>
                      ))}
                   </div>
+
                </div>
              ))}
           </div>
@@ -324,17 +337,37 @@ export function TabBarTemplate() {
           </h2>
           <div className="space-y-6">
             {education.map((edu, i) => (
-              <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 bg-gray-50 dark:bg-zinc-900 rounded-2xl border border-gray-100 dark:border-zinc-800">
-                 <div>
-                    <h3 className="text-xl font-bold">{edu.institution}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{edu.degree}</p>
-                 </div>
-                 <div className="mt-2 sm:mt-0 px-4 py-1.5 bg-white dark:bg-black rounded-full text-sm font-medium border border-gray-200 dark:border-zinc-700">
-                    {edu.startDate} - {edu.endDate}
+              <div key={i} className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:shadow-md transition-shadow">
+                 <div className="flex items-start justify-between">
+                    <div>
+                       <div className="p-2 w-fit rounded-lg bg-primary/10 mb-4 text-primary">
+                          <GraduationCap className="w-6 h-6" />
+                       </div>
+                       <h3 className="text-xl font-bold mb-1">{edu.institution}</h3>
+                       <p className="text-gray-600 dark:text-gray-300 font-medium">{edu.degree}</p>
+                       <div className="mt-2">
+                          <CertificateList certificates={edu.certificates} />
+                       </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 bg-gray-50 dark:bg-gray-800 px-3 py-1 rounded-full">
+                       <Calendar className="w-3.5 h-3.5" />
+                       <span>
+                          {edu.startDate} - {edu.endDate}
+                       </span>
+                    </div>
                  </div>
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Certificates Section */}
+        <section id="certificates" className="scroll-mt-28">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="w-2 h-8 bg-primary rounded-full"></span>
+            Certificates
+          </h2>
+          <CertificateList certificates={allCertificates} />
         </section>
 
       </main>

@@ -1,8 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
 import { Calendar, Building2 } from "lucide-react";
+import { CertificateList } from "./CertificateList";
 
 export function Experience() {
   return (
@@ -85,7 +84,7 @@ export function Experience() {
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {job.technologies?.map((tech, i) => (
                   <span
                     key={i}
@@ -95,6 +94,8 @@ export function Experience() {
                   </span>
                 ))}
               </div>
+              
+              <CertificateList certificates={job.certificates} />
             </motion.div>
           ))}
         </div>

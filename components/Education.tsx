@@ -1,8 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
 import { GraduationCap, Calendar } from "lucide-react";
+import { CertificateList } from "./CertificateList";
 
 export function Education() {
   return (
@@ -36,6 +35,7 @@ export function Education() {
                   </div>
                   <h3 className="text-xl font-bold mb-1">{edu.institution}</h3>
                   <p className="text-gray-600 dark:text-gray-300 font-medium">{edu.degree}</p>
+                  <CertificateList certificates={edu.certificates} />
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-500 bg-gray-50 dark:bg-gray-800 px-3 py-1 rounded-full">
                   <Calendar className="w-3.5 h-3.5" />

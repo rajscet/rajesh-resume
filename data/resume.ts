@@ -19,12 +19,22 @@ export interface ResumeData {
     description: string[];
     technologies?: string[];
     link?: string;
+    certificates?: {
+      name: string;
+      url: string;
+      type: "pdf" | "image";
+    }[];
   }[];
   education: {
     institution: string;
     degree: string;
     startDate: string;
     endDate: string;
+    certificates?: {
+      name: string;
+      url: string;
+      type: "pdf" | "image";
+    }[];
   }[];
   skills: {
     category: string;
@@ -85,6 +95,38 @@ export const resumeData: ResumeData = {
       ],
       technologies: ["React Native", "React.js"],
       link: "https://tessrac.com/",
+      certificates: [
+        {
+          name: "Experience Letter",
+          url: "/certificates/experience/Experience Letter_Rajesh Nasit (1).pdf",
+          type: "pdf",
+        },
+        {
+          name: "Relieving Letter",
+          url: "/certificates/experience/tessrac-releaving.pdf",
+          type: "pdf",
+        },
+        {
+          name: "Appointment Letter",
+          url: "/certificates/experience/tessrac-appointment.pdf",
+          type: "pdf",
+        },
+        {
+          name: "Increment 2024",
+          url: "/certificates/experience/RajeshKumar Balubhai Nasit-Increment-2024.pdf",
+          type: "pdf",
+        },
+        {
+          name: "Increment 2023",
+          url: "/certificates/experience/RajeshKumar Balubhai Nasit-Increment-2023.pdf",
+          type: "pdf",
+        },
+        {
+          name: "Exit Letter",
+          url: "/certificates/experience/tessrac-exit.pdf",
+          type: "pdf",
+        },
+      ],
     },
     {
       company: "Full-time Freelancer",
@@ -101,6 +143,28 @@ export const resumeData: ResumeData = {
         "Work with [MBAKOP LLC](https://www.imdb.com/name/nm3543262/) since last 1.5 year with Team.",
       ],
       technologies: ["React Native", "Upwork"],
+      certificates: [
+        {
+          name: "Offer Letter",
+          url: "/certificates/freelancing/offerDetails/offerLater.png",
+          type: "image",
+        },
+        {
+          name: "Contract Detail",
+          url: "/certificates/freelancing/offerDetails/contractDetail.png",
+          type: "image",
+        },
+        {
+          name: "PayPal Statement",
+          url: "/certificates/freelancing/paypalStatement/paypalStatment.PDF",
+          type: "pdf",
+        },
+        {
+          name: "Wise Statement",
+          url: "/certificates/freelancing/wiseStatement/wiseStatment.png",
+          type: "image",
+        },
+      ],
     },
     {
       company: "SRKay Consulting Group + Peacock Technologies",
@@ -117,6 +181,38 @@ export const resumeData: ResumeData = {
       ],
       technologies: ["Android", "React Native", "Java"],
       link: "https://www.srkay.com/",
+      certificates: [
+        {
+          name: "SRK Experience",
+          url: "/certificates/experience/srk_exprience.pdf",
+          type: "pdf",
+        },
+        {
+          name: "SRK Relieving",
+          url: "/certificates/experience/srk_leaving.pdf",
+          type: "pdf",
+        },
+        {
+          name: "SRK Appointment 1",
+          url: "/certificates/experience/srkay_appoiment1.jpeg",
+          type: "image",
+        },
+        {
+          name: "SRK Appointment 2",
+          url: "/certificates/experience/srkay_appoiment2.jpeg",
+          type: "image",
+        },
+        {
+          name: "Peacock Experience",
+          url: "/certificates/experience/peacock_experience.jpeg",
+          type: "image",
+        },
+        {
+          name: "Peacock Appointment",
+          url: "/certificates/experience/peacock_appoiment1.jpeg",
+          type: "image",
+        },
+      ],
     },
     {
       company: "DRC Systems + DRC Techno",
@@ -137,6 +233,33 @@ export const resumeData: ResumeData = {
         "Got the ability to create custom controls.",
       ],
       technologies: ["Android", "Java", "PhoneGap"],
+      certificates: [
+        {
+          name: "DRC Systems Experience",
+          url: "/certificates/experience/drcsystems_experience.jpeg",
+          type: "image",
+        },
+        {
+          name: "DRC Systems Appointment",
+          url: "/certificates/experience/drcsystems_appoiment.jpeg",
+          type: "image",
+        },
+        {
+          name: "DRC Techno Experience",
+          url: "/certificates/experience/drctechno_experience.jpeg",
+          type: "image",
+        },
+        {
+          name: "DRC Techno Appointment 1",
+          url: "/certificates/experience/drctechno_appoitment1.jpeg",
+          type: "image",
+        },
+        {
+          name: "DRC Techno Appointment 2",
+          url: "/certificates/experience/drctechno_appoiment2.jpeg",
+          type: "image",
+        },
+      ],
     },
     {
       company: "Promact Infotech",
@@ -151,6 +274,18 @@ export const resumeData: ResumeData = {
       ],
       technologies: ["C#", ".Net", "WCF", "SQL"],
       link: "https://promactinfo.com/",
+      certificates: [
+        {
+          name: "Promact Experience",
+          url: "/certificates/experience/promact_experience.jpeg",
+          type: "image",
+        },
+        {
+          name: "Promact Appointment",
+          url: "/certificates/experience/promact_appoiment.jpeg",
+          type: "image",
+        },
+      ],
     },
   ],
   education: [
@@ -159,6 +294,39 @@ export const resumeData: ResumeData = {
       degree: "B.E. in Computer Science",
       startDate: "2006",
       endDate: "2010",
+      certificates: [
+        {
+          name: "Degree Certificate",
+          url: "/certificates/degree.jpeg",
+          type: "image",
+        },
+      ],
+    },
+    {
+      institution: "Higher Secondary School",
+      degree: "HSC",
+      startDate: "2004",
+      endDate: "2006",
+      certificates: [
+        {
+          name: "HSC Certificate",
+          url: "/certificates/hsc.jpeg",
+          type: "image",
+        },
+      ],
+    },
+    {
+      institution: "Secondary School",
+      degree: "SSC",
+      startDate: "2003",
+      endDate: "2004",
+      certificates: [
+        {
+          name: "SSC Certificate",
+          url: "/certificates/ssc.jpeg",
+          type: "image",
+        },
+      ],
     },
   ],
   skills: [
