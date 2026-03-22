@@ -409,5 +409,13 @@ export const resumeData: ResumeData = {
       role: "MySelf only single react native developer in this project and I communicated with the backend team, client, and QA, Designer via scrum zoom meet and skype to show progress and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
     },
+    {
+      title: "TWG Retail Chatbot — \"Red\" (The Warehouse Group)",
+      description:
+        "Built an end-to-end conversational AI chatbot for a major NZ retail app. Features include NLP-driven product search with horizontal carousels, automated order tracking, delivery cost calculations, store finder via Google Maps, and seamless bot-to-human handoff via call/email intents.",
+      role: "Sole Android developer responsible for full implementation of chatbot UI, API integrations, and custom components for FAQ, price-match, and account management flows.",
+      technologies: ["Android Studio", "Java", "XML", "Google Maps API", "REST API", "Deep Linking"],
+      link: "https://drive.google.com/file/d/1EnjG3MIHWH2RcUY3nQVoToFOHfhiGNRF/view?usp=drive_link",
+    },
   ],
 };
