@@ -359,6 +359,30 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
+      title: "ScareMe Mobile",
+      description:
+        "Built a React Native movie discovery app for iOS and Android with OTP and passkey authentication, profile selection, home/explore tabs, search, movie details, watched/liked lists, and backend API integration.",
+      role: "Lead React Native developer responsible for mobile architecture, authentication flows, navigation, API integration, UI implementation, and app testing.",
+      technologies: ["React Native", "TypeScript", "Zustand", "React Navigation", "Passkeys", "REST API"],
+      link: "https://scare.me/",
+    },
+    {
+      title: "ScareMe TV",
+      description:
+        "Built a TV-focused ScareMe app with remote-friendly navigation, authentication, discover/explore movie browsing, movie detail pages, saved movie lists, and Vimeo/YouTube playback flows.",
+      role: "React Native TV developer responsible for tvOS-focused UI, focus navigation, video player integration, API integration, and platform-specific fixes.",
+      technologies: ["React Native TV", "TypeScript", "tvOS", "React Navigation", "REST API", "Video Playback"],
+      link: "https://scare.me/",
+    },
+    {
+      title: "MagicWish",
+      description:
+        "Built a wishlist and gifting mobile app with user authentication, wish lists, friend discovery, product capture through camera and barcode scanning, maps, store finder, push notifications, and delivery tracking.",
+      role: "Lead React Native developer responsible for app architecture, Supabase/Firebase integration, camera and barcode workflows, map features, notifications, and end-to-end mobile UX.",
+      technologies: ["React Native", "TypeScript", "Supabase", "Firebase", "React Query", "Maps", "Vision Camera"],
+      link: "https://magicwish.com",
+    },
+    {
       title: "Stonex LLC (Farm Advantage & StoneX One Pro)",
       description:
         "Farm Advantage arms row crops farmers, dairy farms, and livestock operations with tools to market produce, manage risk and maximize margins. StoneX One Pro gives professional trades access to algorithmic trading, white glove support, and advanced account types. Apps: [StoneX One](https://play.google.com/store/apps/details?id=com.stonex.one), [Farm Advantage](https://play.google.com/store/apps/details?id=intlfcstone.clientaccess).",
