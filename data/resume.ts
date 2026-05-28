@@ -380,6 +380,7 @@ export const resumeData: ResumeData = {
         "Automated Referral Network. Auto Referrals: Fryends constantly scour your network looking for jobs that match your skills. Leads: The system then notifies you of all potential jobs and clients that match you. Introduction: Your mutual friend will proceed to make the proper introductions in a new three-way chat room.",
       role: "We are 2 react native developers working together and communicating with the backend team, client, and QA via scrum to show progress and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
+      link: "https://drive.google.com/file/d/1294bBri_wetG0JKIAGEMWb-cO5tifBkF/view?usp=drive_link",
     },
     {
       title: "Fun Comp",
@@ -394,6 +395,7 @@ export const resumeData: ResumeData = {
         "Network for Actor, Director and Advertiser. Actor can put their portfolio and discuss with director if director is interested on it to play role of his movie, etc and can see requirement of director. Director can see portfolio of all actors and can contact if he is interested of actor. Advertise will prompt his ads on this app.",
       role: "We are two react native developers working together and communicating with the backend team, client, and QA via scrum google meet and slack to show progress, gathering requirements and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
+      link: "https://drive.google.com/file/d/1QSKXVrpUuIZDT11zYJimP1-kQZkerqrq/view?usp=sharing",
     },
     {
       title: "Payment App",
@@ -401,6 +403,7 @@ export const resumeData: ResumeData = {
         "Send out invoices and track cashflow. Invoicing: Our Invoicing tool is easy-to-use, allowing you to create customizable invoices and automatically send reminders to ensure your customers do not forget to pay. Payments: Getting paid using Payments by Peymynt is effortless, too. You can enable our functionality to accept bank and credit card payments with processing fees as low as 1%. Receipts: Tracking your expenses like never before, our Receipts tool allows you to import receipts to have an accurate picture of your business expenses.",
       role: "MySelf only single react native developer in this project and I communicated with the backend team, client, and QA via zoom scrum and skype to show progress, requirement gathering and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
+      link: "https://drive.google.com/file/d/1HHg6nrgP8wcgSp5r9gYh059_qBy1ds-e/view?usp=drive_link",
     },
     {
       title: "NestByte",
@@ -408,6 +411,7 @@ export const resumeData: ResumeData = {
         "Home design/decorating ideas. NestByte is for professionals of home decor and designer like https://www.houzz.in/. Professionals will put their portfolios and from those portfolios, end users will inquire for orders and quote.",
       role: "MySelf only single react native developer in this project and I communicated with the backend team, client, and QA, Designer via scrum zoom meet and skype to show progress and queries' resolution.",
       technologies: ["React Native", "Node JS", "MongoDB"],
+      link: "https://drive.google.com/file/d/1v1V5wduy5HIttU-hNBRRBNHGjuGRptkX/view?usp=sharing",
     },
     {
       title: "TWG Retail Chatbot — \"Red\" (The Warehouse Group)",
