@@ -53,8 +53,9 @@ export const resumeData: ResumeData = {
   personalInfo: {
     name: "Rajesh Nasit",
     title:
-      "React Native Expert | Freelancer & Consultant | ReactJS / Next JS / Node JS Developer | 15+ Years of experience in Software Industry",
-    summary: "",
+      "AI-Assisted React Native Expert | Full-Stack Developer | Freelancer & Consultant | 15+ Years of Software Industry Experience",
+    summary:
+      "Senior React Native and full-stack developer using AI-assisted engineering workflows to plan, code, debug, document, manage Git, and deploy faster. Experienced with ChatGPT, Codex, Claude, Gemini, Replit, Cursor, and related AI tools for building production-ready mobile and web applications.",
     email: "enrajesh67@gmail.com",
     phone: "+91 - 9510475846",
     location: "Surat (Permanent) / Gadhda (Current), Gujarat, India",
@@ -73,6 +74,7 @@ export const resumeData: ResumeData = {
         "Developed Leads app for e-commerce app for local users.",
         "Working on creating web using Next JS and mobile app for service booking app.",
         "Created API using Supabase Database.",
+        "Use prompt engineering and AI-assisted workflows for coding, debugging, Git operations, deployments, and technical documentation.",
       ],
       technologies: ["React Native", "React.js", "Next.js", "Supabase"],
       link: "https://www.bookingrequest.com/",
@@ -353,8 +355,23 @@ export const resumeData: ResumeData = {
       items: ["Git", "GitHub", "VS Code", "Jira", "Slack", "Skype", "Zoom"],
     },
     {
-      category: "AI Tools & Skills",
-      items: ["Prompt Engineering", "ChatGPT", "Gemini", "Gravity", "Cursor"],
+      category: "AI-Assisted Engineering",
+      items: [
+        "Prompt Engineering",
+        "AI-assisted Coding & Debugging",
+        "AI Code Review",
+        "Git & Deployment Workflows",
+        "AI-assisted Documentation",
+        "Multi-model Prompting",
+        "Agentic Development Workflows",
+        "Replit",
+        "Codex",
+        "ChatGPT",
+        "Gemini",
+        "Claude",
+        "Gravity",
+        "Cursor",
+      ],
     },
   ],
   projects: [
