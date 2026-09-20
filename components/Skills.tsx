@@ -16,7 +16,9 @@ export function Skills() {
       >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Skills & Expertise</h2>
-          <p className="text-muted-foreground text-gray-500">Technical proficiencies and tools.</p>
+          <p className="text-muted-foreground text-gray-500">
+            Core technologies, architecture, delivery, and collaboration expertise.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rajesh Nasit — Developer Portfolio
+
+Recruiter-focused portfolio and interactive resume for Rajesh Nasit, a senior full-stack and
+mobile developer with experience across React Native, Next.js, Node.js, NestJS, TypeScript,
+RESTful APIs, Supabase, and PostgreSQL.
+
+## Highlights
+
+- Three switchable resume layouts
+- Responsive portfolio for desktop and mobile
+- Experience, skills, education, and featured-project sections
+- Recruiter- and ATS-focused technical keywords
+- Image export and contact actions
+- Dark-mode support
+
+## Tech Stack
+
+- Next.js 16 and React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npx eslint data/resume.ts app/layout.tsx components
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+app/          Next.js app entry points and global styles
+components/   Resume sections, templates, and UI components
+data/         Structured resume content
+lib/          Shared utilities
+public/       Public portfolio assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Private certificates, employment records, and payment statements are intentionally excluded from
+the repository.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: [rajscet](https://github.com/rajscet)
+- LinkedIn: [Rajesh Nasit](https://www.linkedin.com/in/rajesh-n-6b8471135/)

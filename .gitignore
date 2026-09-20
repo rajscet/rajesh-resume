@@ -43,3 +43,11 @@ next-env.d.ts
 
 # IDE
 .vscode/
+
+# private resume records and local source documents
+/public/certificates/
+/portfolio/
+/Rajesh_Nasit-Resume*.docx
+/Rajesh_Nasit-Resume*.pdf
+/full_resume_text.txt
+/12.jpeg

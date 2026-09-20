@@ -17,7 +17,7 @@ export function ModernTemplate() {
       <Skills />
       <Projects />
       <Contact />
-      
+
       <footer className="py-8 text-center text-sm text-muted-foreground text-gray-400">
         <p>© {new Date().getFullYear()} {process.env.NEXT_PUBLIC_NAME || "Portfolio"}. All rights reserved.</p>
       </footer>

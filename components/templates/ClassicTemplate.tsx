@@ -14,7 +14,7 @@ export function ClassicTemplate() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 p-4 sm:p-8 animate-in fade-in duration-500">
       <div className="max-w-6xl mx-auto bg-white dark:bg-black shadow-xl rounded-lg overflow-hidden flex flex-col md:flex-row min-h-[calc(100vh-4rem)]">
-        
+
          {/* Left Sidebar */}
         <aside className="w-full md:w-1/3 bg-slate-900 text-white p-8 space-y-8">
            <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-slate-700 shadow-xl mx-auto md:mx-0">
@@ -31,7 +31,7 @@ export function ClassicTemplate() {
             <h3 className="text-lg font-semibold border-b border-slate-700 pb-2">Contact</h3>
             <div className="space-y-3 text-sm text-slate-300">
               <div className="flex items-center gap-3">
-                <button 
+                <button
                   onClick={() => setIsEmailModalOpen(true)}
                   className="flex items-center gap-3 underline text-blue-400 hover:text-blue-300 transition-colors text-left"
                 >
@@ -46,7 +46,7 @@ export function ClassicTemplate() {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <a 
+                <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalInfo.location)}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export function ClassicTemplate() {
                 </a>
                 <LocationLink location={personalInfo.location} className="hover:text-white transition-colors" />
               </div>
-              
+
               <div className="flex flex-wrap gap-3 mt-4 pt-4">
                  {personalInfo.linkedin && (
                     <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white"><Linkedin className="w-5 h-5"/></a>
@@ -76,11 +76,20 @@ export function ClassicTemplate() {
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold border-b border-slate-700 pb-2">Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.flatMap(s => s.items).map((skill, i) => (
-                <span key={i} className="bg-slate-800 px-2 py-1 rounded text-xs text-slate-200">
-                  {skill}
-                </span>
+            <div className="space-y-4">
+              {skills.map((group, i) => (
+                <div key={i}>
+                  <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    {group.category}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((skill, j) => (
+                      <span key={j} className="bg-slate-800 px-2 py-1 rounded text-xs text-slate-200">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -184,6 +193,11 @@ export function ClassicTemplate() {
                         return part;
                       })}
                     </p>
+                    {project.role && (
+                      <p className="mb-2 border-l-2 border-slate-300 pl-2 text-xs italic text-slate-500 dark:border-slate-700 dark:text-slate-400">
+                        {project.role}
+                      </p>
+                    )}
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.map((t, k) => (
                          <span key={k} className="text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-900 px-1.5 py-0.5 rounded">#{t}</span>
@@ -198,10 +212,10 @@ export function ClassicTemplate() {
         </main>
       </div>
       <ExportPdfButton />
-      <EmailOptionsModal 
-        isOpen={isEmailModalOpen} 
-        onClose={() => setIsEmailModalOpen(false)} 
-        email={personalInfo.email} 
+      <EmailOptionsModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        email={personalInfo.email}
       />
     </div>
   );

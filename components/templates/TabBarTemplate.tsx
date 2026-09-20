@@ -64,11 +64,11 @@ export function TabBarTemplate() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-800 dark:text-slate-200">
-      
+
       {/* Top Tab Bar */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          
+
           <div className="flex items-center gap-3">
              <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
                {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -103,7 +103,7 @@ export function TabBarTemplate() {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden p-2 text-gray-600 dark:text-gray-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -137,7 +137,7 @@ export function TabBarTemplate() {
       </AnimatePresence>
 
       <main className="pt-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-24">
-        
+
         {/* Profile Section */}
         <section id="profile" className="scroll-mt-28 flex flex-col items-center text-center space-y-6">
            <div className="h-40 w-40 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-xl">
@@ -149,21 +149,21 @@ export function TabBarTemplate() {
              <p className="text-xl text-primary font-medium">{personalInfo.title}</p>
              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">{personalInfo.summary}</p>
            </div>
-           
+
            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <a 
+                <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalInfo.location)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  <MapPin className="w-4 h-4" /> 
+                  <MapPin className="w-4 h-4" />
                 </a>
                 <LocationLink location={personalInfo.location} />
               </div>
-              <button 
-                onClick={() => setIsEmailModalOpen(true)} 
+              <button
+                onClick={() => setIsEmailModalOpen(true)}
                 className="flex items-center gap-2 underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors text-left"
               >
                 <Mail className="w-4 h-4" /> {personalInfo.email}
@@ -298,7 +298,7 @@ export function TabBarTemplate() {
                        </span>
                     ))}
                   </div>
-                  
+
 
                 </div>
              ))}
@@ -376,10 +376,10 @@ export function TabBarTemplate() {
         <p>© {new Date().getFullYear()} {process.env.NEXT_PUBLIC_NAME || "Portfolio"}. All rights reserved.</p>
       </footer>
       <ExportPdfButton />
-      <EmailOptionsModal 
-        isOpen={isEmailModalOpen} 
-        onClose={() => setIsEmailModalOpen(false)} 
-        email={personalInfo.email} 
+      <EmailOptionsModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        email={personalInfo.email}
       />
     </div>
   );

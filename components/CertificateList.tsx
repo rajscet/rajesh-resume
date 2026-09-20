@@ -37,7 +37,7 @@ export function CertificateList({ certificates }: CertificateListProps) {
         ))}
       </div>
 
-      <CertificateModal 
+      <CertificateModal
         isOpen={!!selectedCert}
         onClose={() => setSelectedCert(null)}
         certificate={selectedCert}

@@ -45,7 +45,7 @@ body {
   p, h1, h2, h3, h4, h5, h6, li, ul, img, div {
     break-inside: avoid-page;
   }
-  
+
   section {
     break-inside: auto;
   }
@@ -67,7 +67,7 @@ body {
     min-height: auto !important;
     height: auto !important;
   }
-  
+
   /* Ensure Classic Template sidebar stays side-by-side if space permits, or stacks cleanly */
   /* forcing desktop layout for Classic Template if desired, but flexible is usually safer. */
   /* With margin:0, standard A4 should trigger desktop view (md breakpoint) */

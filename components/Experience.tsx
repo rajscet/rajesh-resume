@@ -37,7 +37,7 @@ export function Experience() {
                   <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
                     <Building2 className="w-4 h-4" />
                     {job.link ? (
-                      <a 
+                      <a
                         href={job.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export function Experience() {
                   </span>
                 ))}
               </div>
-              
+
               <CertificateList certificates={job.certificates} />
             </motion.div>
           ))}

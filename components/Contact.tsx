@@ -38,7 +38,7 @@ export function Contact() {
               <Mail className="w-5 h-5" />
               <span>Say Hello</span>
             </button>
-            
+
             <a
               href={`tel:${phone}`}
               className="inline-flex items-center gap-2 bg-white dark:bg-zinc-800 text-foreground px-6 py-3 rounded-full font-medium text-lg border border-gray-200 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors"
@@ -47,7 +47,7 @@ export function Contact() {
               <span>Call Me</span>
             </a>
 
-            <div 
+            <div
               onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank')}
               className="inline-flex items-center gap-2 bg-white dark:bg-zinc-800 text-foreground px-6 py-3 rounded-full font-medium text-lg border border-gray-200 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors cursor-pointer"
             >
@@ -57,10 +57,10 @@ export function Contact() {
           </div>
         </motion.div>
       </motion.div>
-      <EmailOptionsModal 
-        isOpen={isEmailModalOpen} 
-        onClose={() => setIsEmailModalOpen(false)} 
-        email={email} 
+      <EmailOptionsModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        email={email}
       />
     </section>
   );

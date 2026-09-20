@@ -14,7 +14,7 @@ export default function Home() {
       {template === "modern" && <ModernTemplate />}
       {template === "classic" && <ClassicTemplate />}
       {template === "tabbar" && <TabBarTemplate />}
-      
+
       <TemplateSwitcher currentTemplate={template} onTemplateChange={setTemplate} />
     </main>
   );

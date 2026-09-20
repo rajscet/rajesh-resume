@@ -18,7 +18,9 @@ export function Projects() {
       >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Featured Projects</h2>
-          <p className="text-muted-foreground text-gray-500">Showcase of selected works.</p>
+          <p className="text-muted-foreground text-gray-500">
+            Production mobile, web, and backend/API platforms.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -72,6 +74,12 @@ export function Projects() {
                   return part;
                 })}
               </p>
+
+              {project.role && (
+                <p className="mb-5 border-l-2 border-gray-200 pl-3 text-sm italic text-gray-500 dark:border-gray-700 dark:text-gray-400">
+                  {project.role}
+                </p>
+              )}
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.technologies.map((tech, i) => (

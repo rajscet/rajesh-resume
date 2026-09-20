@@ -16,12 +16,12 @@ export function ExportPdfButton({ className, variant = "floating", ...props }: E
   const handleExport = async () => {
     try {
       setIsExporting(true);
-      
+
       const element = document.body;
       const themeBackgroundColor = window.getComputedStyle(document.body).backgroundColor;
 
-      const dataUrl = await toJpeg(element, { 
-        quality: 0.95, 
+      const dataUrl = await toJpeg(element, {
+        quality: 0.95,
         backgroundColor: themeBackgroundColor,
         style: {
            backgroundColor: themeBackgroundColor
@@ -32,7 +32,7 @@ export function ExportPdfButton({ className, variant = "floating", ...props }: E
       link.download = `${process.env.NEXT_PUBLIC_NAME || "resume"}-portfolio.jpg`;
       link.href = dataUrl;
       link.click();
-      
+
     } catch (error) {
       console.error('Export failed:', error);
       alert('Export failed. Please try a different browser.');

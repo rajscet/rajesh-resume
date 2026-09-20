@@ -96,7 +96,7 @@ export const EmailOptionsModal: React.FC<EmailOptionsModalProps> = ({
                 <X className="w-5 h-5 text-gray-500" />
               </button>
             </div>
-            
+
             <div className="p-2 space-y-1">
               {options.map((option, index) => (
                 <button
@@ -119,7 +119,7 @@ export const EmailOptionsModal: React.FC<EmailOptionsModalProps> = ({
                 </button>
               ))}
             </div>
-            
+
             <div className="p-4 bg-gray-50/50 dark:bg-zinc-900/50 text-center text-xs text-gray-500 border-t border-gray-100 dark:border-zinc-800">
               Preferred email: {email}
             </div>

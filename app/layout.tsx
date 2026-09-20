@@ -13,8 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rajesh-Nasit-Resume",
-  description: "Portfolio of Rajesh Nasit - React Native & Full Stack Developer",
+  title: "Rajesh Nasit | Senior Full-Stack & React Native Developer",
+  description:
+    "Senior full-stack and mobile developer with 15+ years of experience in React Native, Next.js, Node.js, TypeScript, RESTful APIs, Supabase, and PostgreSQL.",
+  keywords: [
+    "Senior Full-Stack Developer",
+    "React Native Developer",
+    "Mobile App Developer",
+    "Next.js Developer",
+    "Node.js Developer",
+    "TypeScript Developer",
+    "NestJS",
+    "RESTful APIs",
+    "Supabase",
+    "PostgreSQL",
+    "iOS and Android",
+    "Rajesh Nasit",
+  ],
   icons: {
     icon: "/profile.jpeg",
   },

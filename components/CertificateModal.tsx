@@ -30,7 +30,7 @@ export function CertificateModal({
       setIsUnlocked(false);
       setError(false);
     }
-  }, [isOpen]); 
+  }, [isOpen]);
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,9 +143,9 @@ export function CertificateModal({
                   />
                 )}
                  <div className="p-2 border-t border-gray-100 dark:border-zinc-800 flex justify-end bg-white dark:bg-zinc-900">
-                    <a 
-                        href={certificate.url} 
-                        target="_blank" 
+                    <a
+                        href={certificate.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs flex items-center gap-1 text-blue-500 hover:text-blue-600 font-medium"
                     >
