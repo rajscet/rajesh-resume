@@ -10,7 +10,7 @@ import { ExportPdfButton } from "@/components/ExportPdfButton";
 
 export function ModernTemplate() {
   return (
-    <div className="min-h-screen bg-background text-foreground scroll-smooth animate-in fade-in duration-500">
+    <div data-resume-export-root className="min-h-screen bg-background text-foreground scroll-smooth animate-in fade-in duration-500">
       <Hero />
       <Experience />
       <Education />

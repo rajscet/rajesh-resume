@@ -12,7 +12,7 @@ export function ClassicTemplate() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 p-4 sm:p-8 animate-in fade-in duration-500">
+    <div data-resume-export-root className="min-h-screen bg-gray-100 dark:bg-zinc-900 p-4 sm:p-8 animate-in fade-in duration-500">
       <div className="max-w-6xl mx-auto bg-white dark:bg-black shadow-xl rounded-lg overflow-hidden flex flex-col md:flex-row min-h-[calc(100vh-4rem)]">
 
          {/* Left Sidebar */}
@@ -133,7 +133,7 @@ export function ClassicTemplate() {
                         job.company
                     )}
                   </div>
-                  <ul className="list-disc list-outside ml-4 space-y-1 text-slate-600 dark:text-slate-400">
+                  <ul data-pdf-break-before className="list-disc list-outside ml-4 space-y-1 text-slate-600 dark:text-slate-400">
                     {job.description.map((desc, j) => (
                       <li key={j}>
                         {desc.split(/(\[.*?\]\(.*?\))/g).map((part, k) => {
@@ -166,7 +166,7 @@ export function ClassicTemplate() {
               <h2 className="text-2xl font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-6 border-b pb-2 border-slate-200 dark:border-slate-800">Projects</h2>
               <div className="grid grid-cols-1 gap-6">
                 {projects.map((project, i) => (
-                  <div key={i}>
+                  <div key={i} data-pdf-break-before>
                     <div className="flex items-center gap-2 mb-1">
                       {project.link ? (
                           <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">{project.title}</a>

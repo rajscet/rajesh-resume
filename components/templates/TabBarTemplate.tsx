@@ -63,7 +63,7 @@ export function TabBarTemplate() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-800 dark:text-slate-200">
+    <div data-resume-export-root className="min-h-screen bg-white dark:bg-zinc-950 text-slate-800 dark:text-slate-200">
 
       {/* Top Tab Bar */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
